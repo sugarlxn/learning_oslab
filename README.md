@@ -15,6 +15,7 @@ docker build -t lxn_oslab:1.0 .
 ```shell
 docker pull lxn1234/lxn_oslab:1.0 
 ```
+> Dockerfile 的构建参考[林夕`](https://blog.csdn.net/qq_45923646/article/details/120575616) 大佬的环境配置方法，感谢大佬写的文档
 
 ## run container
 
