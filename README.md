@@ -51,7 +51,7 @@ xeyes
 
 2. 解压并编译oslab
 ```shell
-tar -zxvf hit-oslab.tar.gz
+tar -zxvf hit-oslab.tar.gz -C /root/
 cd oslab/linux-0.11
 make all -j 2
 ```

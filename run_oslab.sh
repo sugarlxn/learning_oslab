@@ -13,7 +13,7 @@ then
 fi
 
 # Run the OSLab programs
-docker run --rm -it --network=host --name oslab  \
+docker run -it --network=host --name oslab  \
     --env="DISPLAY=172.30.1.102:0.0" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
