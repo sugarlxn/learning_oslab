@@ -18,4 +18,5 @@ docker run --rm -it --network=host --name oslab  \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
+    -v /home/lxn/learning_os/oslab:/root/oslab \
     lxn_oslab:1.0 /bin/bash

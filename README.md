@@ -32,13 +32,20 @@ docker run --rm -it --network=host --name oslab  \
 ./run_oslab.sh
 ```
 
-## test 
-1. 我们可以通过一个`x11-apps` 的小插件，来测试容器中的窗口转发, 以下操作我们在容器中进行
+## test
+1. 安装[Xlaunch](https://sourceforge.net/projects/vcxsrv/),(在windows 上使用docker desktop 需要Xlaunch 可视化容器里面的GUI窗口)
+
+下载安装Xluanch，使用默认配置启动xlaunch即可
+
+> linux 环境下不需要安装这个Xlaunch，在容器里面使用`export DISPLAY=<host_ip>:0.0` 即可
+
+2. 我们可以通过一个`x11-apps` 的小插件，来测试容器中的窗口转发, 以下操作我们在容器中进行
 ```shell
 apt-get install -y x11-apps
 xeyes
 ```
 如果出现两只眼睛的窗口，则说明容器内部的窗口转发配置成功
+
 
 ![image1](./image/oslab1.png)
 
