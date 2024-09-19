@@ -66,3 +66,62 @@ cd oslab
 
 ![image2](./image/oslab2.png)
 
+# 踩坑日志
+## 1. "unknown filesystem type 'minix'"
+由于本实验环境使用WSL2 的Ubuntu20.04 + dockerdesktop，WSL2 中linux kernel在Microsoft 官方的设置下没有打开操作系统对 minix 文件系统的支持，所有需要为WSL2重新编译 linux kernel。看起来很复杂，别担心，只需要下面几个步骤就可以解决问题
+
+参考链接:
+[Microsoft/WSL2-linux-kernel](https://github.com/microsoft/WSL2-Linux-Kernel)
+[WSL2中linux内核替换](https://blog.csdn.net/weixin_60738001/article/details/130739325)
+
+可以使用任何linux分发版为WSL2 编译linux kernel，本次测试使用WSL2 ubuntu 20.04
+1. 下载WSL2 linux kernel，通过-b拉取对应的分支
+```shell
+git clone -b linux-msft-wsl-5.15.y git@github.com:microsoft/WSL2-Linux-Kernel.git
+```
+2. 安装编译依赖
+```shell
+sudo apt install build-essential flex bison dwarves libssl-dev libelf-dev cpio
+```
+
+3. 使用WSL2内核配置构建内核：
+编辑`Microsoft/config-wsl` 文件，设置操作系统支持minix 文件系统
+```shell
+CONFIG_MINIX_FS=y 
+```
+编译linux kernel
+```shell
+make KCONFIG_CONFIG=Microsoft/config-wsl -j 4
+```
+> config-wsl 可以修改linux kernel 的模块支持，例如 设置这个参数 CONFIG_MINIX_FS=y 可以使得操作系统内核支持 minix 文件系统，同时 设置 CONFIG_LOCALVERSION 可以设置操作系统内核uname 显示的系统信息
+
+4. 编译完成会生成linux kernel为arch/x86/boot/bzImage，将该Linux kernel 拷贝到C:\Windows\System32\lxss\tools路径下 , 重命名为wsl2-linux-kernel-5-15
+![image-linux-kernel](./image/1.png)
+
+5. 设置WSL2的.wslconfig文件，指定自定义内核启动
+.wslconfig文件路径为：C:\Users\<用户名>\.wslconfig
+为配置文件添加kernel内容
+```shell
+[wsl2]
+kernel=C:\\Windows\\System32\\lxss\\tools\\wsl2-linux-kernel-5-15
+```
+完整的.wslconfig文件如下：
+```shell
+[wsl2]
+kernel=C:\\Windows\\System32\\lxss\\tools\\wsl2-linux-kernel-5-15
+networkingMode=mirrored    #bridged | mirrored
+#vmSwitch=WSLBridge
+ipv6=true
+[experimental]
+autoProxy=true
+```
+5. 重启WSL2，在powershell执行
+```shell
+wsl.exe --shutdown
+wsl.exe 
+```
+6. 接下来在启动linux分发版，就可以查看内核信息
+```shell
+uname -a
+```
+![image-uname](./image/2.png)

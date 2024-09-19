@@ -42,6 +42,12 @@ dep:
 	cp tmp_make Makefile
 
 ### Dependencies:
+iam.s iam.o : iam.c ../include/unistd.h ../include/sys/stat.h \
+  ../include/sys/types.h ../include/sys/times.h ../include/sys/utsname.h \
+  ../include/utime.h 
+whoami.s whoami.o : whoami.c ../include/unistd.h ../include/sys/stat.h \
+  ../include/sys/types.h ../include/sys/times.h ../include/sys/utsname.h \
+  ../include/utime.h 
 _exit.s _exit.o : _exit.c ../include/unistd.h ../include/sys/stat.h \
   ../include/sys/types.h ../include/sys/times.h ../include/sys/utsname.h \
   ../include/utime.h 

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "kernel.h": "c",
+        "sysinfo.h": "c",
+        "sched.h": "c"
+    }
+}

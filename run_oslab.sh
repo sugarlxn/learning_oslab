@@ -13,10 +13,10 @@ then
 fi
 
 # Run the OSLab programs
-docker run -it --network=host --name oslab  \
+docker run -it --rm --network=host --name oslab_test  \
     --env="DISPLAY=172.30.1.102:0.0" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
-    -v /home/lxn/learning_os/oslab:/root/oslab \
+    --privileged \
     lxn_oslab:1.0 /bin/bash
