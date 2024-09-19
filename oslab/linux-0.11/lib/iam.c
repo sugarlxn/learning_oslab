@@ -2,7 +2,7 @@
 write by lxn, 2024.09.18
 */
 #define __LIBRARY__
-#include <unistd.h>
+#include <../include/unistd.h>
 
 _syscall1(int,iam,const char*,name);
 

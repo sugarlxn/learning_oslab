@@ -252,4 +252,10 @@ int getppid(void);
 pid_t getpgrp(void);
 pid_t setsid(void);
 
+//note add two syscall function
+
+int whoami(char* name, unsigned int size);
+int iam(const char* name);
+
 #endif
+

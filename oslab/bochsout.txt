@@ -34,12 +34,12 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe 
-00000000000i[MEM0 ] allocated memory at 0xf65ec010. after alignment, vector=0xf65ed000
+00000000000i[MEM0 ] allocated memory at 0xf65d7010. after alignment, vector=0xf65d8000
 00000000000i[MEM0 ] 16.00MB
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('./bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/39424 ('./bochs/vgabios.bin')
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Wed Sep 18 14:36:23 2024 (time0=1726670183)
+00000000000i[CMOS ] Setting initial clock to: Thu Sep 19 14:19:04 2024 (time0=1726755544)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: './linux-0.11/Image' ro=0, h=2,t=80,spt=18
@@ -237,191 +237,30 @@
 00022368213i[FDD  ] read() on floppy image returns 0
 00022413168i[FDD  ] read() on floppy image returns 0
 00022463638i[BIOS ] int13_harddisk: function 15, unmapped device for ELDL=81
-00466133892i[SPEAK] pc speaker on with frequency inf
-00466133892i[XGUI ] X11 Beep ON (frequency=inf)
-00466587393i[XGUI ] X11 Beep OFF
-00466587393i[PIT81] Changing GATE 2 to: 0
-00914281776i[SPEAK] pc speaker on with frequency 749.955994
-00914281776i[XGUI ] X11 Beep ON (frequency=749.96)
-00914281776i[PIT81] Changing GATE 2 to: 1
-00914754533i[XGUI ] X11 Beep OFF
-00914754533i[PIT81] Changing GATE 2 to: 0
-00939623775i[SPEAK] pc speaker on with frequency 749.955994
-00939623775i[XGUI ] X11 Beep ON (frequency=749.96)
-00939623775i[PIT81] Changing GATE 2 to: 1
-00939632874i[SPEAK] pc speaker on with frequency 749.955994
-00939632874i[XGUI ] X11 Beep ON (frequency=749.96)
-00940074931i[XGUI ] X11 Beep OFF
-00940074931i[PIT81] Changing GATE 2 to: 0
-00943695878i[SPEAK] pc speaker on with frequency 749.955994
-00943695878i[XGUI ] X11 Beep ON (frequency=749.96)
-00943695878i[PIT81] Changing GATE 2 to: 1
-00943696843i[SPEAK] pc speaker on with frequency 749.955994
-00943696843i[XGUI ] X11 Beep ON (frequency=749.96)
-00944155000i[XGUI ] X11 Beep OFF
-00944155000i[PIT81] Changing GATE 2 to: 0
-00949223416i[SPEAK] pc speaker on with frequency 749.955994
-00949223416i[XGUI ] X11 Beep ON (frequency=749.96)
-00949223416i[PIT81] Changing GATE 2 to: 1
-00949224381i[SPEAK] pc speaker on with frequency 749.955994
-00949224381i[XGUI ] X11 Beep ON (frequency=749.96)
-00949675090i[XGUI ] X11 Beep OFF
-00949675090i[PIT81] Changing GATE 2 to: 0
-00952827548i[SPEAK] pc speaker on with frequency 749.955994
-00952827548i[XGUI ] X11 Beep ON (frequency=749.96)
-00952827548i[PIT81] Changing GATE 2 to: 1
-00952828513i[SPEAK] pc speaker on with frequency 749.955994
-00952828513i[XGUI ] X11 Beep ON (frequency=749.96)
-00953275146i[XGUI ] X11 Beep OFF
-00953275146i[PIT81] Changing GATE 2 to: 0
-00957631938i[SPEAK] pc speaker on with frequency 749.955994
-00957631938i[XGUI ] X11 Beep ON (frequency=749.96)
-00957631938i[PIT81] Changing GATE 2 to: 1
-00957632903i[SPEAK] pc speaker on with frequency 749.955994
-00957632903i[XGUI ] X11 Beep ON (frequency=749.96)
-00958075220i[XGUI ] X11 Beep OFF
-00958075220i[PIT81] Changing GATE 2 to: 0
-00966047922i[SPEAK] pc speaker on with frequency 749.955994
-00966047922i[XGUI ] X11 Beep ON (frequency=749.96)
-00966047922i[PIT81] Changing GATE 2 to: 1
-00966048887i[SPEAK] pc speaker on with frequency 749.955994
-00966048887i[XGUI ] X11 Beep ON (frequency=749.96)
-00966515356i[XGUI ] X11 Beep OFF
-00966515356i[PIT81] Changing GATE 2 to: 0
-00970815620i[SPEAK] pc speaker on with frequency 749.955994
-00970815620i[XGUI ] X11 Beep ON (frequency=749.96)
-00970815620i[PIT81] Changing GATE 2 to: 1
-00970816585i[SPEAK] pc speaker on with frequency 749.955994
-00970816585i[XGUI ] X11 Beep ON (frequency=749.96)
-00971275434i[XGUI ] X11 Beep OFF
-00971275434i[PIT81] Changing GATE 2 to: 0
-00974919878i[SPEAK] pc speaker on with frequency 749.955994
-00974919878i[XGUI ] X11 Beep ON (frequency=749.96)
-00974919878i[PIT81] Changing GATE 2 to: 1
-00974920843i[SPEAK] pc speaker on with frequency 749.955994
-00974920843i[XGUI ] X11 Beep ON (frequency=749.96)
-00975395496i[XGUI ] X11 Beep OFF
-00975395496i[PIT81] Changing GATE 2 to: 0
-00979211916i[SPEAK] pc speaker on with frequency 749.955994
-00979211916i[XGUI ] X11 Beep ON (frequency=749.96)
-00979211916i[PIT81] Changing GATE 2 to: 1
-00979212881i[SPEAK] pc speaker on with frequency 749.955994
-00979212881i[XGUI ] X11 Beep ON (frequency=749.96)
-00979652821i[SPEAK] pc speaker on with frequency 749.955994
-00979652821i[XGUI ] X11 Beep ON (frequency=749.96)
-00979652825i[SPEAK] pc speaker on with frequency 749.955994
-00979652825i[XGUI ] X11 Beep ON (frequency=749.96)
-00979654424i[SPEAK] pc speaker on with frequency 749.955994
-00979654424i[XGUI ] X11 Beep ON (frequency=749.96)
-00979654428i[SPEAK] pc speaker on with frequency 749.955994
-00979654428i[XGUI ] X11 Beep ON (frequency=749.96)
-00979675563i[XGUI ] X11 Beep OFF
-00979675563i[PIT81] Changing GATE 2 to: 0
-00982831842i[SPEAK] pc speaker on with frequency 749.955994
-00982831842i[XGUI ] X11 Beep ON (frequency=749.96)
-00982831842i[PIT81] Changing GATE 2 to: 1
-00982832807i[SPEAK] pc speaker on with frequency 749.955994
-00982832807i[XGUI ] X11 Beep ON (frequency=749.96)
-00983275620i[XGUI ] X11 Beep OFF
-00983275620i[PIT81] Changing GATE 2 to: 0
-00986431670i[SPEAK] pc speaker on with frequency 749.955994
-00986431670i[XGUI ] X11 Beep ON (frequency=749.96)
-00986431670i[PIT81] Changing GATE 2 to: 1
-00986432635i[SPEAK] pc speaker on with frequency 749.955994
-00986432635i[XGUI ] X11 Beep ON (frequency=749.96)
-00986875680i[XGUI ] X11 Beep OFF
-00986875680i[PIT81] Changing GATE 2 to: 0
-00991239699i[SPEAK] pc speaker on with frequency 749.955994
-00991239699i[XGUI ] X11 Beep ON (frequency=749.96)
-00991239699i[PIT81] Changing GATE 2 to: 1
-00991240664i[SPEAK] pc speaker on with frequency 749.955994
-00991240664i[XGUI ] X11 Beep ON (frequency=749.96)
-00991715757i[XGUI ] X11 Beep OFF
-00991715757i[PIT81] Changing GATE 2 to: 0
-00994371775i[SPEAK] pc speaker on with frequency 749.955994
-00994371775i[XGUI ] X11 Beep ON (frequency=749.96)
-00994371775i[PIT81] Changing GATE 2 to: 1
-00994372740i[SPEAK] pc speaker on with frequency 749.955994
-00994372740i[XGUI ] X11 Beep ON (frequency=749.96)
-00994835805i[XGUI ] X11 Beep OFF
-00994835805i[PIT81] Changing GATE 2 to: 0
-00998431389i[SPEAK] pc speaker on with frequency 749.955994
-00998431389i[XGUI ] X11 Beep ON (frequency=749.96)
-00998431389i[PIT81] Changing GATE 2 to: 1
-00998432354i[SPEAK] pc speaker on with frequency 749.955994
-00998432354i[XGUI ] X11 Beep ON (frequency=749.96)
-00998875867i[XGUI ] X11 Beep OFF
-00998875867i[PIT81] Changing GATE 2 to: 0
-01002035519i[SPEAK] pc speaker on with frequency 749.955994
-01002035519i[XGUI ] X11 Beep ON (frequency=749.96)
-01002035519i[PIT81] Changing GATE 2 to: 1
-01002036554i[SPEAK] pc speaker on with frequency 749.955994
-01002036554i[XGUI ] X11 Beep ON (frequency=749.96)
-01002515927i[XGUI ] X11 Beep OFF
-01002515927i[PIT81] Changing GATE 2 to: 0
-01007879760i[SPEAK] pc speaker on with frequency 749.955994
-01007879760i[XGUI ] X11 Beep ON (frequency=749.96)
-01007879760i[PIT81] Changing GATE 2 to: 1
-01007880725i[SPEAK] pc speaker on with frequency 749.955994
-01007880725i[XGUI ] X11 Beep ON (frequency=749.96)
-01008356022i[XGUI ] X11 Beep OFF
-01008356022i[PIT81] Changing GATE 2 to: 0
-01012823706i[SPEAK] pc speaker on with frequency 749.955994
-01012823706i[XGUI ] X11 Beep ON (frequency=749.96)
-01012823706i[PIT81] Changing GATE 2 to: 1
-01012824671i[SPEAK] pc speaker on with frequency 749.955994
-01012824671i[XGUI ] X11 Beep ON (frequency=749.96)
-01013276100i[XGUI ] X11 Beep OFF
-01013276100i[PIT81] Changing GATE 2 to: 0
-01018175703i[SPEAK] pc speaker on with frequency 749.955994
-01018175703i[XGUI ] X11 Beep ON (frequency=749.96)
-01018175703i[PIT81] Changing GATE 2 to: 1
-01018176668i[SPEAK] pc speaker on with frequency 749.955994
-01018176668i[XGUI ] X11 Beep ON (frequency=749.96)
-01018636185i[XGUI ] X11 Beep OFF
-01018636185i[PIT81] Changing GATE 2 to: 0
-01021767632i[SPEAK] pc speaker on with frequency 749.955994
-01021767632i[XGUI ] X11 Beep ON (frequency=749.96)
-01021767632i[PIT81] Changing GATE 2 to: 1
-01021768597i[SPEAK] pc speaker on with frequency 749.955994
-01021768597i[XGUI ] X11 Beep ON (frequency=749.96)
-01022236242i[XGUI ] X11 Beep OFF
-01022236242i[PIT81] Changing GATE 2 to: 0
-01027802204i[SPEAK] pc speaker on with frequency 749.955994
-01027802204i[XGUI ] X11 Beep ON (frequency=749.96)
-01027802204i[PIT81] Changing GATE 2 to: 1
-01028276341i[XGUI ] X11 Beep OFF
-01028276341i[PIT81] Changing GATE 2 to: 0
-01666830029i[SPEAK] pc speaker on with frequency 749.955994
-01666830029i[XGUI ] X11 Beep ON (frequency=749.96)
-01666830029i[PIT81] Changing GATE 2 to: 1
-01667286514i[XGUI ] X11 Beep OFF
-01667286514i[PIT81] Changing GATE 2 to: 0
-01671625862i[SPEAK] pc speaker on with frequency 749.955994
-01671625862i[XGUI ] X11 Beep ON (frequency=749.96)
-01671625862i[PIT81] Changing GATE 2 to: 1
-01672086587i[XGUI ] X11 Beep OFF
-01672086587i[PIT81] Changing GATE 2 to: 0
-01777779947p[     ] >>PANIC<< SIGNAL 2 caught
-01777779947i[CPU  ] CPU is in protected mode (active)
-01777779947i[CPU  ] CS.d_b = 32 bit
-01777779947i[CPU  ] SS.d_b = 32 bit
-01777779947i[CPU  ] | EAX=0001b160  EBX=00000009  ECX=0001c1dc  EDX=00000020
-01777779947i[CPU  ] | ESP=0001c118  EBP=00021e8c  ESI=00000002  EDI=00000001
-01777779947i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
-01777779947i[CPU  ] | SEG selector     base    limit G D
-01777779947i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-01777779947i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
-01777779947i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-01777779947i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
-01777779947i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
-01777779947i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-01777779947i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
-01777779947i[CPU  ] | EIP=00006a74 (00006a74)
-01777779947i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x08056d00
-01777779947i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-01777779947i[CPU  ] >> jz .+0x0000004a (0x00006ac0) : 744A
-01777779947i[CMOS ] Last time is 1726670627 (Wed Sep 18 14:43:47 2024)
-01777779947i[XGUI ] Exit
-01777779947i[     ] restoring default signal behavior
-01777779947i[CTRL ] quit_sim called with exit code 1
+00380648804i[SPEAK] pc speaker on with frequency inf
+00380648804i[XGUI ] X11 Beep ON (frequency=inf)
+00381106033i[XGUI ] X11 Beep OFF
+00381106033i[PIT81] Changing GATE 2 to: 0
+00633632000p[XGUI ] >>PANIC<< POWER button turned off.
+00633632000i[CPU  ] CPU is in protected mode (active)
+00633632000i[CPU  ] CS.d_b = 32 bit
+00633632000i[CPU  ] SS.d_b = 32 bit
+00633632000i[CPU  ] | EAX=ffffffff  EBX=ffffffff  ECX=0001c1b4  EDX=0000000d
+00633632000i[CPU  ] | ESP=0001c118  EBP=00021e8c  ESI=00000000  EDI=00000001
+00633632000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af PF cf
+00633632000i[CPU  ] | SEG selector     base    limit G D
+00633632000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00633632000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 00000fff 1 1
+00633632000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00633632000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00633632000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 00000fff 1 1
+00633632000i[CPU  ] |  FS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00633632000i[CPU  ] |  GS:0017( 0002| 1|  3) 00000000 0000009f 1 1
+00633632000i[CPU  ] | EIP=00006ae2 (00006ae2)
+00633632000i[CPU  ] | CR0=0x8000001b CR1=0 CR2=0x0804253c
+00633632000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00633632000i[CPU  ] >> cmp dword ptr ds:[ecx], 0x00000000 : 833900
+00633632000i[CMOS ] Last time is 1726755702 (Thu Sep 19 14:21:42 2024)
+00633632000i[XGUI ] Exit
+00633632000i[     ] restoring default signal behavior
+00633632000i[CTRL ] quit_sim called with exit code 1
