@@ -87,7 +87,8 @@ sudo apt install build-essential flex bison dwarves libssl-dev libelf-dev cpio
 3. 使用WSL2内核配置构建内核：
 编辑`Microsoft/config-wsl` 文件，设置操作系统支持minix 文件系统
 ```shell
-CONFIG_MINIX_FS=y 
+CONFIG_MINIX_FS=y
+CONFIG_LOCALVERSION="-microsoft-lxn-20240919-WSL2" 
 ```
 编译linux kernel
 ```shell
