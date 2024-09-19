@@ -90,11 +90,12 @@ sudo apt install build-essential flex bison dwarves libssl-dev libelf-dev cpio
 CONFIG_MINIX_FS=y
 CONFIG_LOCALVERSION="-microsoft-lxn-20240919-WSL2" 
 ```
+> config-wsl 可以修改linux kernel 的模块支持，例如 设置这个参数 CONFIG_MINIX_FS=y 可以使得操作系统内核支持 minix 文件系统，同时 设置 CONFIG_LOCALVERSION 可以设置操作系统内核uname 显示的系统信息
+
 编译linux kernel
 ```shell
 make KCONFIG_CONFIG=Microsoft/config-wsl -j 4
 ```
-> config-wsl 可以修改linux kernel 的模块支持，例如 设置这个参数 CONFIG_MINIX_FS=y 可以使得操作系统内核支持 minix 文件系统，同时 设置 CONFIG_LOCALVERSION 可以设置操作系统内核uname 显示的系统信息
 
 4. 编译完成会生成linux kernel为arch/x86/boot/bzImage，将该Linux kernel 拷贝到C:\Windows\System32\lxss\tools路径下 , 重命名为wsl2-linux-kernel-5-15
 ![image-linux-kernel](./image/1.png)
