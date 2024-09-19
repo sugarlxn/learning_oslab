@@ -99,7 +99,7 @@ make KCONFIG_CONFIG=Microsoft/config-wsl -j 4
 ![image-linux-kernel](./image/1.png)
 
 5. 设置WSL2的.wslconfig文件，指定自定义内核启动
-.wslconfig文件路径为：C:\Users\<用户名>\.wslconfig
+.wslconfig文件路径为：`C:\Users\<用户名>\.wslconfig` 
 为配置文件添加kernel内容
 ```shell
 [wsl2]
