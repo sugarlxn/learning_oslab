@@ -27,6 +27,12 @@ docker pull lxn1234/lxn_oslab:1.0
 docker run --rm -it --network=host --name oslab  \
     --env="DISPLAY=<host_ip>:0.0" \
 ```
+在容器里面更新 `DISPLAY` 这个环境变量也很方便，只需要执行`export` 即可
+```shell
+export DISPLAY=<host_ip>:0.0
+# 查看该环境变量
+export |grep "DISPLAY"
+```
 4. 运行oslab容器
 ```shell
 ./run_oslab.sh
@@ -127,3 +133,4 @@ wsl.exe
 uname -a
 ```
 ![image-uname](./image/2.png)
+
