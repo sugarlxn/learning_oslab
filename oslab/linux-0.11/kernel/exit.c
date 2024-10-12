@@ -127,6 +127,8 @@ int do_exit(long code)
 	if (current->leader)
 		kill_session();
 	current->state = TASK_ZOMBIE;
+	//推出一个进程，输出log文件，“E”-退出
+	fprintk(3, "E %ld\t%c\t%ld\n", current->pid, "E", jiffies);
 	current->exit_code = code;
 	tell_father(current->father);
 	schedule();
@@ -184,6 +186,12 @@ repeat:
 		if (options & WNOHANG)
 			return 0;
 		current->state=TASK_INTERRUPTIBLE;
+		//NOTE: 实验三  进程轨迹跟踪与统计
+		// 0 号进程是守护进程，CPU空闲的时候一直在waiting，输出它的话是不会通过脚本检测的
+		if(current->pid != 0){
+			fprintk(3, "W %ld\t%c\t%ld\n", current->pid, "W", jiffies);
+		}
+
 		schedule();
 		if (!(current->signal &= ~(1<<(SIGCHLD-1))))
 			goto repeat;

@@ -89,7 +89,12 @@ int copy_process(int nr,long ebp,long edi,long esi,long gs,long none,
 	p->leader = 0;		/* process leadership doesn't inherit */
 	p->utime = p->stime = 0;
 	p->cutime = p->cstime = 0;
+	//NOTE: 实验三  进程轨迹跟踪与统计
+	//设置start_time 为 jiffies
 	p->start_time = jiffies;
+	//新建进程，向log文件输出，“N”-新建进程
+	fprintk(3, "N %ld\t%c\t%ld\n", p->pid, "N", jiffies);
+
 	p->tss.back_link = 0;
 	p->tss.esp0 = PAGE_SIZE + (long) p;
 	p->tss.ss0 = 0x10;
@@ -129,7 +134,12 @@ int copy_process(int nr,long ebp,long edi,long esi,long gs,long none,
 		current->executable->i_count++;
 	set_tss_desc(gdt+(nr<<1)+FIRST_TSS_ENTRY,&(p->tss));
 	set_ldt_desc(gdt+(nr<<1)+FIRST_LDT_ENTRY,&(p->ldt));
+
+	//NOTE: 实验三  进程轨迹跟踪与统计
 	p->state = TASK_RUNNING;	/* do this last, just in case */
+	//进程状态为就绪态，向log文件输出，“J”-就绪
+	fprintk(3, "J %ld\t%c\t%ld\n", p->pid, "J", jiffies);
+
 	return last_pid;
 }
 

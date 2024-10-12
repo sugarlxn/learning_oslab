@@ -117,6 +117,8 @@ void schedule(void)
 			if (((*p)->signal & ~(_BLOCKABLE & (*p)->blocked)) &&
 			(*p)->state==TASK_INTERRUPTIBLE)
 				(*p)->state=TASK_RUNNING;
+				//可中断睡眠状态==> 就绪状态
+				fprintk(3, "%d\tJ\t%d\n", (*p)->pid, jiffies);
 		}
 
 /* this is the scheduler proper: */
@@ -138,12 +140,27 @@ void schedule(void)
 				(*p)->counter = ((*p)->counter >> 1) +
 						(*p)->priority;
 	}
+
+	//如果当前进程和next进程不一样，则输出log文件
+	if(current->pid != task[next]->pid){
+		//当前进程由运行态变为就绪态
+		if(current->state == TASK_RUNNING){
+			fprintk(3, "%d\tJ\t%d\n", current->pid, jiffies);
+		}
+		//next进程由就绪态变为运行态
+		fprintk(3, "%d\tJ\t%d\n", task[next]->pid, jiffies);
+	}
+
 	switch_to(next);
 }
 
 int sys_pause(void)
 {
 	current->state = TASK_INTERRUPTIBLE;
+	//NOTE: 实验三  进程轨迹跟踪与统计
+	//输出log文件
+	if(current->pid != 0)
+		fprintk(3, "W %ld\t%c\t%ld\n", current->pid, "W", jiffies);
 	schedule();
 	return 0;
 }
@@ -158,10 +175,15 @@ void sleep_on(struct task_struct **p)
 		panic("task[0] trying to sleep");
 	tmp = *p;
 	*p = current;
+	//切换到睡眠态
 	current->state = TASK_UNINTERRUPTIBLE;
+	//NOTE: 实验三  进程轨迹跟踪与统计
+	//输出log文件
+	fprintk(3, "S %ld\t%c\t%ld\n", current->pid, "S", jiffies);
 	schedule();
 	if (tmp)
 		tmp->state=0;
+		fprintk(3, "J %ld\t%c\t%ld\n", current->pid, "J", jiffies);
 }
 
 void interruptible_sleep_on(struct task_struct **p)
@@ -175,20 +197,28 @@ void interruptible_sleep_on(struct task_struct **p)
 	tmp=*p;
 	*p=current;
 repeat:	current->state = TASK_INTERRUPTIBLE;
+		//输出log文件
+		fprintk(3, "W %ld\t%c\t%ld\n", current->pid, "W", jiffies);
 	schedule();
 	if (*p && *p != current) {
 		(**p).state=0;
+		//输出log文件
+		fprintk(3, "J %ld\t%c\t%ld\n", (*p)->pid, "J", jiffies);
 		goto repeat;
 	}
 	*p=NULL;
 	if (tmp)
 		tmp->state=0;
+		//输出log文件
+		fprintk(3, "J %ld\t%c\t%ld\n", tmp->pid, "J", jiffies);
 }
 
 void wake_up(struct task_struct **p)
 {
 	if (p && *p) {
 		(**p).state=0;
+		//唤醒最后进入等待序列的进程
+		fprintk(3, "J %ld\t%c\t%ld\n", (*p)->pid, "J", jiffies);
 		*p=NULL;
 	}
 }

@@ -5,6 +5,10 @@ void verify_area(void * addr,int count);
 volatile void panic(const char * str);
 int printf(const char * fmt, ...);
 int printk(const char * fmt, ...);
+/// @brief 实验三 进程轨迹跟踪与统计
+/// @param fd 
+/// @param fmt 
+int fprintk(int fd, const char * fmt, ...);
 int tty_write(unsigned ch,char * buf,int count);
 void * malloc(unsigned int size);
 void free_s(void * obj, int size);

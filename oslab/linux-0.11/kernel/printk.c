@@ -11,6 +11,8 @@
  */
 #include <stdarg.h>
 #include <stddef.h>
+#include "linux/sched.h"
+#include "sys/stat.h"
 
 #include <linux/kernel.h>
 
@@ -18,7 +20,8 @@ static char buf[1024];
 
 extern int vsprintf(char * buf, const char * fmt, va_list args);
 
-int fprintf(int fd, const char * fmt){
+static char logbuf[1024];
+int fprintk(int fd, const char * fmt, ...){
     va_list args;
     int count;
     struct file * file;
