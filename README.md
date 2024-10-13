@@ -6,6 +6,9 @@
 
 # get start
 ## build image 
+
+获取oslab的docker image有两种方法，分别是本地构建和从dockerhub直接拉取我们构建好的镜像，两种方法都是可行的，本地构建可以给你更多的自由度，从dockerhub 直接拉取也很方便快捷，下面步骤二选一即可：
+
 1. 从[Dockerfile](./Dockerfile)中执行构建, 我们默认你已经安装好docker，无论通过docker desktop 或者在linux主机上
 ```shell
 docker build -t lxn_oslab:1.0 .
